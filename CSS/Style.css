@@ -2,6 +2,8 @@
 	Minute styling to ensure the canvas fits screen.
 */
 
+@import url('https://fonts.googleapis.com/css?family=Bit5x3');
+
 html,
 body {
 	width: 100%;
