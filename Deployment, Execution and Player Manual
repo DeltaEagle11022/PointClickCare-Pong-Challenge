@@ -1,0 +1,30 @@
+Deployment/Execution
+
+To run this game of Pong:
+
+1) Download the HTML, CSS and JavaScript folders and their respective files. Place in one location.
+2) Double-click the HTML file and run in browser
+
+Note: Game contains audio
+
+
+Player Manual
+
+This game of Pong is designed for 2 players.
+
+Read instructions (same as below). Click the screen in the beginning to play. Game will go up until 11 points. Once game is over,
+click to play again.
+
+Player 1: 
+  W Key: Move UP
+  S Key: Move DOWN
+  
+Player 2:
+  UP_ARROW Key: Move UP
+  DOWN_ARROW Key: Move DOWN
+  
+Note: Game mechanics can be changed. 
+      To change Ball size (radius) and color see Ball.js
+      To change Paddle height, width, speed, and color see Paddle.js
+      To change all other mechanics, see Pong_Game.js
+      To change audio file, see <audio> tags in HTML file and audio files in JavaScript folder   
