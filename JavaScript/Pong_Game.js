@@ -1,3 +1,14 @@
+/*
+Developer: Mrugank Upadhyay
+Date: June 27th, 2019
+
+Game: Pong
+
+Note:
+	Text is formatted via Prettier so it may seem awkwardly at some points however it is meant to add ample spacing for
+	math equations.
+*/
+
 //Canvas variables and TitleScreen toggle (via boolean)
 var canvas;
 var canvasContext;
@@ -33,7 +44,7 @@ var Paddle_2 = new Paddle(canvas.width - 12, 250);
 var contactAudio_1 = document.getElementById("contactSound1");
 var contactAudio_2 = document.getElementById("contactSound2");
 
-//executes the script once the window has loaded
+//Executes the script once the window has loaded
 window.onload = function() {
 	//Updating screen for movement and drawing, frame rate is 30 frames per second
 	setInterval(function() {
@@ -44,13 +55,14 @@ window.onload = function() {
 	//Add event listener for keydown events
 	document.addEventListener("keydown", function() {
 		if (event.code == "KeyW" && Paddle_1.posY > 0) {
-			//turns on the "auto hold" which allows the paddle to continuously move up
+			//Turns on the "auto hold" which allows the paddle to continuously move up
 			Paddle_1.up = true;
 		} else if (event.code == "KeyS" && Paddle_1.posY < canvas.height) {
-			//turns on the "auto hold" which allows the paddle to continuously move down
+			//Turns on the "auto hold" which allows the paddle to continuously move down
 			Paddle_1.down = true;
 		}
 
+		//Same as above but for Player 2 using arrow keys
 		if (event.code == "ArrowUp" && Paddle_2.posY > 0) {
 			Paddle_2.up = true;
 		} else if (event.code == "ArrowDown" && Paddle_2.posY < canvas.height) {
@@ -68,6 +80,7 @@ window.onload = function() {
 			Paddle_1.down = false;
 		}
 
+		//Same as above but for Player 2
 		if (event.code == "ArrowUp") {
 			Paddle_2.up = false;
 		} else if (event.code == "ArrowDown") {
@@ -75,7 +88,7 @@ window.onload = function() {
 		}
 	});
 
-	//Handles mouse click to reset game
+	//Handles mouse click to start and reset game
 	canvas.addEventListener("mousedown", MouseClick);
 };
 
@@ -86,7 +99,7 @@ function MouseClick(evt) {
 	}
 
 	if (WinScreen) {
-		//When player "Clicks to play again", win screen will disappear and scores / paddles reset
+		//When player "Clicks to play again", win screen will disappear and scores / paddles / ball reset
 		p1Score = 0;
 		p2Score = 0;
 		ball.speedX = 10;
@@ -98,11 +111,11 @@ function MouseClick(evt) {
 }
 
 function move() {
-	//blocks out all movement code if title screen in display
+	//Blocks out all movement code if title screen in display
 	if (TitleScreen) {
 		return;
 	}
-	//blocks out all movement code if win is established
+	//Blocks out all movement code if win is established
 	if (WinScreen) {
 		return;
 	}
@@ -160,6 +173,7 @@ function move() {
 			contactAudio_2.play();
 
 			deltaY = ball.posY - (2 * Paddle_2.posY + Paddle_2.paddleHeight) / 2;
+			
 			//multiplied by -1 to reverse direction
 			ball.speedX = staircaseCurveMultiplier(deltaY) * -1;
 			ball.posX += ball.speedX;
@@ -175,7 +189,7 @@ function move() {
 	ball.posY += ball.speedY;
 
 	// Bounce if hits the top or bottom of the canvas
-	//reverses the Y speed of the ball
+	//Reverses the Y speed of the ball
 	if (ball.posY > canvas.height - ball.radius) {
 		//Places the ball slightly further up so that it does not become stuck on edge
 		ball.posY = canvas.height - 9;
@@ -191,9 +205,9 @@ function move() {
 
 /*
     This function will map the difference in the height of the ball and the center of the paddle 
-    upon contact to a calculate new Y speed for the ball.
+    upon contact to calculate new Y speed for the ball.
 
-    For a curve with a gradual increase a sigmoid (logistical) curve was used 7
+    For a curve with a gradual increase, a sigmoid (logistical) curve was used
     and reformatted for a deltaY between -50 and 50 and a speed output between -25 and 25
 */
 function sigmoidCurveMultiplier(_distance) {
