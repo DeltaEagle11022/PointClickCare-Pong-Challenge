@@ -1,0 +1,41 @@
+<!--
+
+Game: Remake of retro classic Pong by Atari
+Developer: Mrugank Upadhyay
+Date: June 27th, 2019
+
+-->
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="..\CSS\Style.css" />
+	</head>
+
+	<body>
+		<!--
+			Creates the canvas. Arbitrary width and height values have been used as canvas is resized in main game file
+		-->
+		<canvas id="Gameboard" width="800" height="600"></canvas>
+
+		<!--
+			Adds audio channels for paddle contact sounds
+		-->
+		<audio
+			id="contactSound1"
+			src="..\JavaScript\Retro Pong Hit 1.mp3"
+			preload="auto"
+		></audio>
+		<audio
+			id="contactSound2"
+			src="..\JavaScript\Retro Pong Hit 2.mp3"
+			preload="auto"
+		></audio>
+
+		<!--
+			Imports external JavaScript files from JavaScript folder
+		-->
+		<script src="..\JavaScript\Ball.js"></script>
+		<script src="..\JavaScript\Paddle.js"></script>
+		<script src="..\JavaScript\Pong_Game.js"></script>
+	</body>
+</html>

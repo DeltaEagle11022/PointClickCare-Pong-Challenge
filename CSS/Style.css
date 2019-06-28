@@ -1,0 +1,10 @@
+/* 
+	Minute styling to ensure the canvas fits screen.
+*/
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
