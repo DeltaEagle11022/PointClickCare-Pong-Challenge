@@ -1,3 +1,5 @@
 # PointClickCare-Pong-Challenge
 
-See Deployment/Execution file
+Developer: Mrugank Upadhyay
+
+See Deployment,Execution and Player file for download and game-play instructions
