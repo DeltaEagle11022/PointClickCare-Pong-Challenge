@@ -12,12 +12,7 @@ Testing
 
 Testing for this game was done in Jasmine (a JavaScript Testing Framework).
 To view test case file, visit my-project/jasmine/jasmine-standalone/spec/Pong_GameSpec.js.
-To run test cases, under my-project/jasmine/jasmine-standalone/spec, double-click SpecRunner.html.
-  
-  Note: Test cases do pass (shown as green dots on top-left screen corner), 
-  and one case is intentionally meant to fail (shown as red cross on top-left corner) to show the working of framework,
-  however, due to an issue with getContext("2d") for the canvas, a type error is shown for which a solution is still being found.
-  Regardless, the testing is not impeded. 
+To run test cases, under my-project/jasmine/jasmine-standalone/spec, run SpecRunner.html. 
 
 
 Player Manual
